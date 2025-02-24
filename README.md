@@ -5,3 +5,5 @@ This repository shows how to use the TIS camera with the TIS.py library. The mai
 To run the script, simply run:
 ```bash
 $ python main.py
+```
+the program will initialize the camera and prompt the user to insert an input for acquiring the images.
