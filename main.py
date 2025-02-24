@@ -23,6 +23,8 @@ counter = 0
 
 tis = TIS.TIS()
 tis.open_device("48420141", 7716, 5360, "143/20", TIS.SinkFormats.BGRA, True)
+tis.set_property("FocusAuto","Off")
+tis.set_property("Focus",600)
 tis.start_pipeline()
 
 # Initialize queues and threads using the new function
