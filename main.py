@@ -5,6 +5,7 @@ import numpy as np
 import TIS
 import image_utils  # Import the new module
 import threading
+import os
 
 # Compute timing for initialization of camera and deep_ocr
 start = time.time()
@@ -26,6 +27,7 @@ tis.open_device("48420141", 7716, 5360, "143/20", TIS.SinkFormats.BGRA, True)
 tis.set_property("FocusAuto","Off")
 tis.set_property("Focus",600)
 tis.start_pipeline()
+path_saving = "saved_images/"
 
 # Initialize queues and threads using the new function
 save_queue, delete_queue, result_queue, save_thread, delete_thread = image_utils.initialize_queues_and_threads()
@@ -36,10 +38,14 @@ try:
         user_input = input("\nEnter something to take an image (type 'e' to quit): ")
         if user_input.lower() == 'e':
             print("Exiting program.")
+            remaining_files = os.listdir("saved_images")
+            if len(remaining_files) >0:
+                for i in remaining_files:
+                    os.remove(path_saving+i)
             break
         else:
             frame_, frame = tis.snap_image(0.1)
-            filename = f"image_{naming_counter}.jpg"
+            filename = path_saving+f"image_{naming_counter}.jpg"
             save_queue.put((frame, filename))
 
             st = time.time()
