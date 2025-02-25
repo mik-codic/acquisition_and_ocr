@@ -8,8 +8,10 @@ To run the main script the following libraries must be installed:
 ```bash
 $ pip install mvtec-halcon==24111
 ```
-* tis
-
+* gstreamer for python
+```bash
+sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-4.0
+```
 
 To run the script, simply run:
 ```bash
