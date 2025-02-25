@@ -28,7 +28,8 @@ tis.set_property("FocusAuto","Off")
 tis.set_property("Focus",600)
 tis.start_pipeline()
 path_saving = "saved_images/"
-
+if not os.path.exists(path_saving):
+    os.makedirs(path_saving)
 # Initialize queues and threads using the new function
 save_queue, delete_queue, result_queue, save_thread, delete_thread = image_utils.initialize_queues_and_threads()
 
