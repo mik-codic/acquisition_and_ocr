@@ -4,11 +4,12 @@ This repository shows how to use the TIS camera with the TIS.py library. The mai
 
 # Requirements
 To run the main script the following libraries must be installed:
-* halcon
-  ```bash
+* halcon library is needed for the DeepOCR algorithm
+```bash
 $ pip install mvtec-halcon==24111
 ```
-*
+* tis
+
 
 To run the script, simply run:
 ```bash
