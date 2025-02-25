@@ -13,6 +13,8 @@ $ pip install mvtec-halcon==24111
 sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-4.0
 ```
 To properly run the script it's necessary the usage of an industrial camera and all the required drivers and library for usage, usually specified by the producer of the camera.
+
+
 To run the script, simply run:
 ```bash
 $ python main.py
