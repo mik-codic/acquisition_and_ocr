@@ -51,7 +51,7 @@ def delete_file(delete_queue):
             delete_queue.task_done()
             break
         try:
-            os.remove(filename)
+            #os.remove(filename) #Remove this comment to view the saved images in the folder befor deleting everything
             print(f"Deleted {filename}")
         except Exception as e:
             print(f"Error deleting file: {e}")
